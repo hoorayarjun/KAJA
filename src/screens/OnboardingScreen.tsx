@@ -3,9 +3,9 @@ import { Image, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { RootStackParamList } from "../../App";
-import TitleText from "../components/TitleText";
-import DescriptionText from "../components/DescriptionText";
-import ActionButton from "../components/ActionButton";
+import TitleText from "../components/common/TitleText";
+import ActionButton from "../components/common/ActionButton";
+import DescriptionText from "../components/common/DescriptionText";
 
 const OnboardingScreen = () => {
   const navigation =

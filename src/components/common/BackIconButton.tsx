@@ -1,13 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import {
-  GestureResponderEvent,
-  Text,
   TouchableOpacity,
   useWindowDimensions,
+  Text
 } from "react-native";
-import { Button, IconButton } from "react-native-paper";
-import { RootStackParamList } from "../../App";
+import { IconButton } from "react-native-paper";
+import { RootStackParamList } from "../../../App";
 
 const BackIconButton = () => {
   const navigation =

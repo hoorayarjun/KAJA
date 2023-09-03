@@ -4,12 +4,9 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  View,
   useWindowDimensions,
 } from "react-native";
-import { RootStackParamList } from "../../App";
-import DescriptionText from "./DescriptionText";
-import { Button } from "react-native-paper";
+import { RootStackParamList } from "../../../App";
 
 const GoogleLoginButton = () => {
   const navigation =
@@ -37,7 +34,7 @@ const GoogleLoginButton = () => {
           resizeMode: "contain",
           backgroundColor: "#FFFFFF",
         }}
-        source={require("../assets/GoogleLogo.jpg")}
+        source={require("../../assets/GoogleLogo.jpg")}
       />
       <Text
         style={{

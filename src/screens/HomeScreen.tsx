@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { RootStackParamList } from "../../App";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ActionButton from "../components/ActionButton";
+import ActionButton from "../components/common/ActionButton";
 
 const HomeScreen = () => {
   const navigation =
