@@ -62,7 +62,7 @@ const LoginScreen = () => {
             label={'Email Address'}
             value={email}
             hidden={false}
-            onChangeText={email => setEmail(email)}
+            onChangeText={text => setEmail(text)}
           />
         </View>
         <View
@@ -74,7 +74,7 @@ const LoginScreen = () => {
             label={'Password'}
             value={password}
             hidden={true}
-            onChangeText={password => setPassword(password)}
+            onChangeText={text => setPassword(text)}
           />
         </View>
         <View

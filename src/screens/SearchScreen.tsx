@@ -1,12 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {
-  Keyboard,
-  TouchableWithoutFeedback,
-  View,
-  useWindowDimensions,
-} from 'react-native';
-import {RootStackParamList} from '../../App';
+import {Keyboard, TouchableWithoutFeedback, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import TitleText from '../components/common/TitleText';
 import BackIconButton from '../components/common/BackIconButton';
@@ -16,10 +8,6 @@ import {useState} from 'react';
 import KajaSearchButton from '../components/search/KajaSearchButton';
 
 const SearchScreen = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const {fontScale} = useWindowDimensions();
-
   const [filter, setFilter] = useState('');
   const [location, setLocation] = useState('');
 
@@ -55,7 +43,7 @@ const SearchScreen = () => {
           }}>
           <SearchFilterInput
             value={filter}
-            onChangeText={filter => setFilter(filter)}
+            onChangeText={text => setFilter(text)}
           />
         </View>
         <View
@@ -67,7 +55,7 @@ const SearchScreen = () => {
           }}>
           <SearchLocationInput
             value={location}
-            onChangeText={location => setLocation(location)}
+            onChangeText={text => setLocation(text)}
           />
         </View>
         <View

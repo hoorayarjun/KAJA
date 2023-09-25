@@ -1,5 +1,5 @@
-import { View, useWindowDimensions } from "react-native";
-import { TextInput } from "react-native-paper";
+import {View, useWindowDimensions} from 'react-native';
+import {TextInput} from 'react-native-paper';
 
 interface SingleLineInputProps {
   label: string;
@@ -9,20 +9,19 @@ interface SingleLineInputProps {
 }
 
 const SingleLineInput = (props: SingleLineInputProps) => {
-  const { label, value, hidden, onChangeText } = props;
-  const adjustedLabel = "  " + label;
-  const { fontScale } = useWindowDimensions();
-  const color = "#808080";
+  const {label, value, hidden, onChangeText} = props;
+  const adjustedLabel = '  ' + label;
+  const {fontScale} = useWindowDimensions();
+  const color = '#808080';
 
   return (
     <View
       style={{
         borderRadius: 100,
-        justifyContent: "center",
+        justifyContent: 'center',
         height: 64 / fontScale,
         width: 346 / fontScale,
-      }}
-    >
+      }}>
       <TextInput
         label={adjustedLabel}
         placeholder={label}
@@ -31,7 +30,7 @@ const SingleLineInput = (props: SingleLineInputProps) => {
         mode="outlined"
         outlineColor={color}
         activeOutlineColor={color}
-        outlineStyle={{ borderRadius: 100 }}
+        outlineStyle={{borderRadius: 100}}
         secureTextEntry={hidden}
       />
     </View>

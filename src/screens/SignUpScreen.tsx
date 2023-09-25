@@ -59,7 +59,7 @@ const SignUpScreen = () => {
             label={'Full Name'}
             value={fullName}
             hidden={false}
-            onChangeText={fullName => setFullName(fullName)}
+            onChangeText={text => setFullName(text)}
           />
         </View>
         <View
@@ -71,7 +71,7 @@ const SignUpScreen = () => {
             label={'Email Address'}
             value={email}
             hidden={false}
-            onChangeText={email => setEmail(email)}
+            onChangeText={text => setEmail(text)}
           />
         </View>
         <View
@@ -83,7 +83,7 @@ const SignUpScreen = () => {
             label={'Your Password'}
             value={password}
             hidden={true}
-            onChangeText={password => setPassword(password)}
+            onChangeText={text => setPassword(text)}
           />
         </View>
         <View
@@ -95,9 +95,7 @@ const SignUpScreen = () => {
             label={'Re-enter Password'}
             value={confirmPassword}
             hidden={true}
-            onChangeText={confirmPassword =>
-              setConfirmPassword(confirmPassword)
-            }
+            onChangeText={text => setConfirmPassword(text)}
           />
         </View>
         <View
