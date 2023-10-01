@@ -31,6 +31,7 @@ const HomeScreen = () => {
     {
       name: 'Restaurant',
       photoUrl: '',
+      summary: 'Some random stuff about restaurants',
       location: {locationText: 'Washington DC'},
       rating: 4.3,
       reviews: [{description: 'I love DC', rating: 2}],
@@ -47,6 +48,7 @@ const HomeScreen = () => {
     {
       name: 'Museams',
       photoUrl: '',
+      summary: 'Some random stuff about museams',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],
@@ -55,6 +57,7 @@ const HomeScreen = () => {
     {
       name: 'Music',
       photoUrl: '',
+      summary: 'Some random stuff about music',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],
@@ -63,6 +66,7 @@ const HomeScreen = () => {
     {
       name: 'Arts',
       photoUrl: '',
+      summary: 'Some random stuff about restaurants',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],

@@ -6,6 +6,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import {RootStackParamList} from '../../App';
+import TextOverview from '../components/itinerary/TextOverview';
 import {Itinerary} from '../types/itineraries';
 
 export interface ItineraryScreenProps {
@@ -30,7 +31,7 @@ const ItineraryScreen = () => {
           alignItems: 'center',
           height: '100%',
         }}>
-        <Text>Welcome to the Itinerary Screen for {itinerary.name}</Text>
+        <TextOverview itinerary={itinerary}></TextOverview>
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );

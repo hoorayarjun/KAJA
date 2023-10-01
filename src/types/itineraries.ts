@@ -15,6 +15,7 @@ export interface ItineraryType {
 export interface Itinerary {
   name: string;
   photoUrl?: string;
+  summary?: string;
   location: LocationData;
   rating: number;
   reviews: Review[];
