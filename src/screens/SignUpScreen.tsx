@@ -100,8 +100,9 @@ const SignUpScreen = () => {
         </View>
         <View
           style={{
-            height: '12.5%',
-            justifyContent: 'center',
+            height: '8%',
+            width: '95%',
+            alignItems: 'center',
           }}>
           <ActionButton
             onPress={signUpButtonPress}
@@ -111,7 +112,7 @@ const SignUpScreen = () => {
         </View>
         <View
           style={{
-            height: '22.5%',
+            height: '27%',
             flexDirection: 'row',
             alignItems: 'flex-end',
           }}>

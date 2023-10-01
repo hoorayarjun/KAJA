@@ -6,27 +6,27 @@ import {
   View,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
-import {Itinerary} from '../../types/itineraries';
+import {Destination} from '../../types/types';
 
-interface ItinerarySummaryCard {
-  itinerary: Itinerary;
+interface DestinationSummaryCardProps {
+  destination: Destination;
 }
 
-const ItinerarySummaryCard = (props: ItinerarySummaryCard) => {
-  const {itinerary} = props;
+const DestinationSummaryCard = (props: DestinationSummaryCardProps) => {
+  const {destination} = props;
   const {fontScale} = useWindowDimensions();
 
   return (
     <TouchableOpacity
       style={{
         flexDirection: 'row',
-        height: 100 / fontScale,
+        height: 70 / fontScale,
         width: '100%',
         alignItems: 'center',
       }}>
       <Image
         source={require('../../assets/kajaLogo.png')}
-        resizeMode="contain"
+        resizeMode="cover"
         style={{
           maxHeight: '80%',
           width: '25%',
@@ -52,16 +52,16 @@ const ItinerarySummaryCard = (props: ItinerarySummaryCard) => {
             color: '#000000',
             fontWeight: '700',
           }}>
-          {itinerary.name}
+          {destination.name}
         </Text>
         <Text
           style={{
             fontSize: 10 / fontScale,
           }}>
-          𖡡 {itinerary.location.locationText}
+          𖡡 {destination.location.locationText}
         </Text>
         <Text style={{fontSize: 10 / fontScale, color: '#828F9C'}}>
-          ★ {itinerary.rating} | {itinerary.reviews.length} Reviews
+          ★ {destination.rating} | {destination.reviews.length} Reviews
         </Text>
       </View>
       <View
@@ -88,4 +88,4 @@ const ItinerarySummaryCard = (props: ItinerarySummaryCard) => {
   );
 };
 
-export default ItinerarySummaryCard;
+export default DestinationSummaryCard;

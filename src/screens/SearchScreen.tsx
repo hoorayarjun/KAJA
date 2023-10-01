@@ -2,10 +2,10 @@ import {Keyboard, TouchableWithoutFeedback, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import TitleText from '../components/common/TitleText';
 import BackIconButton from '../components/common/BackIconButton';
-import SearchLocationInput from '../components/search/SearchLocationInput';
-import SearchFilterInput from '../components/search/SearchFilterInput';
+import SearchLocationInput from '../components/searchScreen/SearchLocationInput';
+import SearchFilterInput from '../components/searchScreen/SearchFilterInput';
 import {useState} from 'react';
-import KajaSearchButton from '../components/search/KajaSearchButton';
+import KajaSearchButton from '../components/searchScreen/KajaSearchButton';
 
 const SearchScreen = () => {
   const [filter, setFilter] = useState('');

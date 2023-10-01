@@ -12,7 +12,7 @@ import TitleText from '../components/common/TitleText';
 import DescriptionText from '../components/common/DescriptionText';
 import {useState} from 'react';
 import SingleLineInput from '../components/common/SingleLineTextInput';
-import GoogleLoginButton from '../components/login/GoogleLoginButton';
+import GoogleLoginButton from '../components/loginScreen/GoogleLoginButton';
 import {Text} from 'react-native';
 import ActionButton from '../components/common/ActionButton';
 
@@ -79,8 +79,9 @@ const LoginScreen = () => {
         </View>
         <View
           style={{
-            height: '12.5%',
-            justifyContent: 'center',
+            height: '8%',
+            width: '95%',
+            alignItems: 'center',
           }}>
           <ActionButton
             onPress={loginButtonOnPress}
@@ -121,7 +122,7 @@ const LoginScreen = () => {
         </View>
         <View
           style={{
-            height: '30%',
+            height: '34.5%',
             flexDirection: 'row',
             alignItems: 'flex-end',
           }}>

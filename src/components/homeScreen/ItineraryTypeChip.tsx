@@ -1,9 +1,9 @@
 import {Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {ItineraryType} from '../../types/itineraries';
+import {ItineraryTag} from '../../types/types';
 
 interface itineraryTypeChipProps {
-  itineraryType: ItineraryType;
+  itineraryType: ItineraryTag;
   isSelected: boolean;
   onPress: () => void;
 }

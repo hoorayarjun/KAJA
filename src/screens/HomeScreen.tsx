@@ -7,17 +7,17 @@ import {
   View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import SearchFilterInput from '../components/searchScreen/SearchFilterInput';
+import {Itinerary, ItineraryTag} from '../types/types';
 import LocationIndicator from '../components/common/LocationIndicator';
-import SearchFilterInput from '../components/search/SearchFilterInput';
-import {Itinerary, ItineraryType} from '../types/itineraries';
-import BottomNavBar from '../components/home/BottomNavBar';
-import DiscoverItinerariesList from '../components/home/DiscoverItinerariesList';
-import LikedItinerariesList from '../components/home/LikedItinerariesList';
+import LikedItinerariesList from '../components/homeScreen/LikedItinerariesList';
+import BottomNavBar from '../components/homeScreen/BottomNavBar';
+import DiscoverItinerariesList from '../components/homeScreen/DiscoverItinerariesList';
 
 const HomeScreen = () => {
   const {fontScale} = useWindowDimensions();
 
-  const itineraryTypes: ItineraryType[] = [
+  const itineraryTypes: ItineraryTag[] = [
     {text: 'All', value: 'grid-view'},
     {text: 'Restaurant', value: 'restaurant'},
     {text: 'Outdoors', value: 'park'},
@@ -29,14 +29,18 @@ const HomeScreen = () => {
 
   const itineraries: Itinerary[] = [
     {
+      id: 1,
       name: 'Restaurant',
       photoUrl: '',
+      summary:
+        'Some random stuff about restaurants. But the text is extremely long for some reason. And the person said that every restuarant sucks. It is unknown why this itinerary has such a high review despite it sucking ass. It was also revealed that the restaurant was on kitchen nightmares and almost shutdown for the rat infestation. Sad news in the press. ',
       location: {locationText: 'Washington DC'},
       rating: 4.3,
       reviews: [{description: 'I love DC', rating: 2}],
       itineraryTypes: ['restaurant'],
     },
     {
+      id: 2,
       name: 'Outdoors',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -45,30 +49,37 @@ const HomeScreen = () => {
       itineraryTypes: ['park'],
     },
     {
+      id: 3,
       name: 'Museams',
       photoUrl: '',
+      summary: 'Some random stuff about museams',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],
       itineraryTypes: ['museum'],
     },
     {
+      id: 4,
       name: 'Music',
       photoUrl: '',
+      summary: 'Some random stuff about music',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],
       itineraryTypes: ['audiotrack'],
     },
     {
+      id: 5,
       name: 'Arts',
       photoUrl: '',
+      summary: 'Some random stuff about restaurants',
       location: {locationText: 'Adams Morgan'},
       rating: 3.8,
       reviews: [],
       itineraryTypes: ['theater-comedy'],
     },
     {
+      id: 6,
       name: 'Shopping',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -109,7 +120,7 @@ const HomeScreen = () => {
               style={{
                 height: 67 / fontScale,
                 width: 67 / fontScale,
-                resizeMode: 'contain',
+                resizeMode: 'cover',
                 backgroundColor: '#000000',
                 borderRadius: 100,
               }}
@@ -145,7 +156,6 @@ const HomeScreen = () => {
         </View>
         <View
           style={{
-            justifyContent: 'flex-end',
             height: '7.5%',
             width: '100%',
           }}>

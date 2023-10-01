@@ -25,7 +25,7 @@ const GoogleLoginButton = () => {
         style={{
           height: 24 / fontScale,
           width: 24 / fontScale,
-          resizeMode: 'contain',
+          resizeMode: 'cover',
           backgroundColor: '#FFFFFF',
         }}
         source={require('../../assets/GoogleLogo.jpg')}

@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 import {FlatList, Text, useWindowDimensions, View} from 'react-native';
-import {Itinerary, ItineraryType} from '../../types/itineraries';
+import {Itinerary, ItineraryTag} from '../../types/types';
 import ItinerarySummaryPhoto from './ItinerarySummaryPhoto';
 import ItineraryTypeChip from './ItineraryTypeChip';
 
 interface DiscoverItinerariesListProps {
-  itineraryTypes: ItineraryType[];
+  itineraryTypes: ItineraryTag[];
   itineraries: Itinerary[];
 }
 
@@ -15,7 +15,7 @@ const DiscoverItinerariesList = (props: DiscoverItinerariesListProps) => {
   const {fontScale} = useWindowDimensions();
 
   const [selectedItineraryType, setSelectedItineraryType] =
-    useState<ItineraryType>(itineraryTypes[0]);
+    useState<ItineraryTag>(itineraryTypes[0]);
 
   const [filteredItineraries, setFilteredItineraries] =
     useState<Itinerary[]>(itineraries);
