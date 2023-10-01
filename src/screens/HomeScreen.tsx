@@ -7,12 +7,12 @@ import {
   View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import LocationIndicator from '../components/common/LocationIndicator';
 import SearchFilterInput from '../components/search/SearchFilterInput';
 import {Itinerary, ItineraryType} from '../types/itineraries';
+import LocationIndicator from '../components/common/LocationIndicator';
+import LikedItinerariesList from '../components/home/LikedItinerariesList';
 import BottomNavBar from '../components/home/BottomNavBar';
 import DiscoverItinerariesList from '../components/home/DiscoverItinerariesList';
-import LikedItinerariesList from '../components/home/LikedItinerariesList';
 
 const HomeScreen = () => {
   const {fontScale} = useWindowDimensions();

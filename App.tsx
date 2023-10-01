@@ -7,6 +7,9 @@ import SignUpScreen from './src/screens/SignUpScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import LocationProvider from './src/providers/LocationDataProvider';
+import ItineraryScreen, {
+  ItineraryScreenProps,
+} from './src/screens/ItineraryScreen';
 
 export type RootStackParamList = {
   OnboardingScreen: undefined;
@@ -14,6 +17,7 @@ export type RootStackParamList = {
   SignUpScreen: undefined;
   HomeScreen: undefined;
   SearchScreen: undefined;
+  ItineraryScreen: ItineraryScreenProps;
 };
 
 export default function App() {
@@ -32,6 +36,7 @@ export default function App() {
             <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="SearchScreen" component={SearchScreen} />
+            <Stack.Screen name="ItineraryScreen" component={ItineraryScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

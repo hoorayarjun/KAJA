@@ -1,3 +1,5 @@
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {
   Image,
   Text,
@@ -6,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
+import {RootStackParamList} from '../../../App';
 import {Itinerary} from '../../types/itineraries';
 
 interface ItinerarySummaryCard {
@@ -15,6 +18,8 @@ interface ItinerarySummaryCard {
 const ItinerarySummaryCard = (props: ItinerarySummaryCard) => {
   const {itinerary} = props;
   const {fontScale} = useWindowDimensions();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <TouchableOpacity
@@ -23,7 +28,10 @@ const ItinerarySummaryCard = (props: ItinerarySummaryCard) => {
         height: 100 / fontScale,
         width: '100%',
         alignItems: 'center',
-      }}>
+      }}
+      onPress={() =>
+        navigation.navigate('ItineraryScreen', {itinerary: itinerary})
+      }>
       <Image
         source={require('../../assets/kajaLogo.png')}
         resizeMode="contain"
