@@ -30,7 +30,7 @@ const ActionButton = (props: ActionButtonProps) => {
         style={{
           color: fontColor,
           alignSelf: 'center',
-          fontSize: 14 / fontScale,
+          fontSize: 22 / fontScale,
           fontWeight: '700',
         }}>
         {text}

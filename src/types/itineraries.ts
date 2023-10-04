@@ -13,6 +13,7 @@ export interface ItineraryType {
 }
 
 export interface Itinerary {
+  id: number;
   name: string;
   photoUrl?: string;
   summary?: string;

@@ -29,15 +29,18 @@ const HomeScreen = () => {
 
   const itineraries: Itinerary[] = [
     {
+      id: 1,
       name: 'Restaurant',
       photoUrl: '',
-      summary: 'Some random stuff about restaurants',
+      summary:
+        'Some random stuff about restaurants. But the text is extremely long for some reason. And the person said that every restuarant sucks. It is unknown why this itinerary has such a high review despite it sucking ass. It was also revealed that the restaurant was on kitchen nightmares and almost shutdown for the rat infestation. Sad news in the press. ',
       location: {locationText: 'Washington DC'},
       rating: 4.3,
       reviews: [{description: 'I love DC', rating: 2}],
       itineraryTypes: ['restaurant'],
     },
     {
+      id: 2,
       name: 'Outdoors',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -46,6 +49,7 @@ const HomeScreen = () => {
       itineraryTypes: ['park'],
     },
     {
+      id: 3,
       name: 'Museams',
       photoUrl: '',
       summary: 'Some random stuff about museams',
@@ -55,6 +59,7 @@ const HomeScreen = () => {
       itineraryTypes: ['museum'],
     },
     {
+      id: 4,
       name: 'Music',
       photoUrl: '',
       summary: 'Some random stuff about music',
@@ -64,6 +69,7 @@ const HomeScreen = () => {
       itineraryTypes: ['audiotrack'],
     },
     {
+      id: 5,
       name: 'Arts',
       photoUrl: '',
       summary: 'Some random stuff about restaurants',
@@ -73,6 +79,7 @@ const HomeScreen = () => {
       itineraryTypes: ['theater-comedy'],
     },
     {
+      id: 6,
       name: 'Shopping',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
