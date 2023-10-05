@@ -7,7 +7,7 @@ export interface Review {
   rating: number;
 }
 
-export interface ItineraryType {
+export interface ItineraryTag {
   text: string;
   value: string;
 }
@@ -21,4 +21,13 @@ export interface Itinerary {
   rating: number;
   reviews: Review[];
   itineraryTypes: string[];
+}
+
+export interface Destination {
+  id: number;
+  name: string;
+  photoUrl?: string;
+  location: LocationData;
+  rating: number;
+  reviews: Review[];
 }

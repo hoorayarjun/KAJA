@@ -21,8 +21,8 @@ const ActionButton = (props: ActionButtonProps) => {
       style={{
         borderRadius: 100,
         justifyContent: 'center',
-        height: 64 / fontScale,
-        width: 346 / fontScale,
+        height: '90%',
+        width: '90%',
         backgroundColor: backgroundColor,
       }}
       onPress={onPress}>

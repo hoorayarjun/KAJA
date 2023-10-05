@@ -7,14 +7,15 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import {Icon} from 'react-native-elements';
 import {RootStackParamList} from '../../../App';
-import {Itinerary} from '../../types/itineraries';
+import {Itinerary} from '../../types/types';
 
-interface ItinerarySummaryPhotoProps {
+interface ItinerarySummaryCardProps {
   itinerary: Itinerary;
 }
 
-const ItinerarySummaryPhoto = (props: ItinerarySummaryPhotoProps) => {
+const ItinerarySummaryCard = (props: ItinerarySummaryCardProps) => {
   const {itinerary} = props;
   const {fontScale} = useWindowDimensions();
   const navigation =
@@ -23,14 +24,10 @@ const ItinerarySummaryPhoto = (props: ItinerarySummaryPhotoProps) => {
   return (
     <TouchableOpacity
       style={{
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
-        justifyContent: 'center',
+        flexDirection: 'row',
+        height: 100 / fontScale,
+        width: '100%',
         alignItems: 'center',
-        width: 180 / fontScale,
-        height: '100%',
       }}
       onPress={() =>
         navigation.navigate('ItineraryScreen', {itinerary: itinerary})
@@ -39,8 +36,8 @@ const ItinerarySummaryPhoto = (props: ItinerarySummaryPhotoProps) => {
         source={require('../../assets/kajaLogo.png')}
         resizeMode="cover"
         style={{
-          height: '100%',
-          maxWidth: '100%',
+          maxHeight: '80%',
+          width: '25%',
           borderTopLeftRadius: 15,
           borderTopRightRadius: 15,
           borderBottomLeftRadius: 15,
@@ -49,18 +46,12 @@ const ItinerarySummaryPhoto = (props: ItinerarySummaryPhotoProps) => {
       />
       <View
         style={{
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
-          borderBottomLeftRadius: 15,
-          borderBottomRightRadius: 15,
           backgroundColor: '#FFFFFF',
-          position: 'absolute',
-          top: '60%',
-          height: '35%',
-          width: '90%',
-          paddingVertical: '7.5%',
-          justifyContent: 'space-between',
           paddingLeft: '5%',
+          paddingVertical: '2%',
+          height: '100%',
+          width: '70%',
+          justifyContent: 'space-evenly',
         }}>
         <Text
           numberOfLines={1}
@@ -71,15 +62,38 @@ const ItinerarySummaryPhoto = (props: ItinerarySummaryPhotoProps) => {
           }}>
           {itinerary.name}
         </Text>
-        <Text style={{fontSize: 10 / fontScale, color: '#828F9C'}}>
+        <Text
+          style={{
+            fontSize: 10 / fontScale,
+          }}>
           𖡡 {itinerary.location.locationText}
         </Text>
         <Text style={{fontSize: 10 / fontScale, color: '#828F9C'}}>
           ★ {itinerary.rating} | {itinerary.reviews.length} Reviews
         </Text>
       </View>
+      <View
+        style={{
+          backgroundColor: '#FFFFFF',
+          width: '15%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <View
+          style={{
+            borderColor: '#F47674',
+            borderWidth: 1,
+            borderRadius: 100,
+            height: '50%',
+            width: '50%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Icon name="arrow-forward-ios" color="#828F9C" />
+        </View>
+      </View>
     </TouchableOpacity>
   );
 };
 
-export default ItinerarySummaryPhoto;
+export default ItinerarySummaryCard;

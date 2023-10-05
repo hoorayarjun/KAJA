@@ -27,7 +27,7 @@ const OnboardingScreen = () => {
         <TitleText text="Welcome to Kaja!" />
       </View>
       <Image
-        style={{height: '40%', maxWidth: '75%', resizeMode: 'contain'}}
+        style={{height: '40%', maxWidth: '100%', resizeMode: 'contain'}}
         source={require('../assets/kajaLogo.png')}
       />
       <View
@@ -42,7 +42,8 @@ const OnboardingScreen = () => {
       <View
         style={{
           height: '12.5%',
-          justifyContent: 'center',
+          width: '100%',
+          alignItems: 'center',
         }}>
         <ActionButton
           onPress={() => navigation.navigate('LoginScreen')}
@@ -53,7 +54,8 @@ const OnboardingScreen = () => {
       <View
         style={{
           height: '12.5%',
-          justifyContent: 'center',
+          width: '100%',
+          alignItems: 'center',
         }}>
         <ActionButton
           onPress={() => navigation.navigate('SignUpScreen')}

@@ -9,10 +9,10 @@ import {
 import {RootStackParamList} from '../../App';
 import ActionButton from '../components/common/ActionButton';
 import BackIconButton from '../components/common/BackIconButton';
-import LikeItineraryIconButton from '../components/itinerary/LikeItineraryIconButton';
-import StopSuggestionsList from '../components/itinerary/StopSuggestionsList';
-import TextOverview from '../components/itinerary/TextOverview';
-import {Itinerary} from '../types/itineraries';
+import LikeItineraryIconButton from '../components/itineraryScreen/LikeItineraryIconButton';
+import DestinationSuggestionList from '../components/itineraryScreen/DestinationSuggestionsList';
+import TextOverview from '../components/itineraryScreen/TextOverview';
+import {Itinerary} from '../types/types';
 
 export interface ItineraryScreenProps {
   itinerary: Itinerary;
@@ -70,8 +70,11 @@ const ItineraryScreen = () => {
           }}>
           <TextOverview itinerary={itinerary} />
         </View>
-        <View style={{height: '15%', width: '90%'}}>
-          <StopSuggestionsList />
+        <View
+          style={{
+            height: '15%',
+          }}>
+          <DestinationSuggestionList />
         </View>
         <View
           style={{
@@ -79,6 +82,7 @@ const ItineraryScreen = () => {
             width: '100%',
             alignItems: 'center',
             backgroundColor: '#FFFFFF',
+            justifyContent: 'center',
           }}>
           <ActionButton
             onPress={() => console.log('KAJA!')}

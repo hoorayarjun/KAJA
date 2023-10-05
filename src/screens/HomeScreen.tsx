@@ -7,17 +7,17 @@ import {
   View,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import SearchFilterInput from '../components/search/SearchFilterInput';
-import {Itinerary, ItineraryType} from '../types/itineraries';
+import SearchFilterInput from '../components/searchScreen/SearchFilterInput';
+import {Itinerary, ItineraryTag} from '../types/types';
 import LocationIndicator from '../components/common/LocationIndicator';
-import LikedItinerariesList from '../components/home/LikedItinerariesList';
-import BottomNavBar from '../components/home/BottomNavBar';
-import DiscoverItinerariesList from '../components/home/DiscoverItinerariesList';
+import LikedItinerariesList from '../components/homeScreen/LikedItinerariesList';
+import BottomNavBar from '../components/homeScreen/BottomNavBar';
+import DiscoverItinerariesList from '../components/homeScreen/DiscoverItinerariesList';
 
 const HomeScreen = () => {
   const {fontScale} = useWindowDimensions();
 
-  const itineraryTypes: ItineraryType[] = [
+  const itineraryTypes: ItineraryTag[] = [
     {text: 'All', value: 'grid-view'},
     {text: 'Restaurant', value: 'restaurant'},
     {text: 'Outdoors', value: 'park'},
@@ -120,7 +120,7 @@ const HomeScreen = () => {
               style={{
                 height: 67 / fontScale,
                 width: 67 / fontScale,
-                resizeMode: 'contain',
+                resizeMode: 'cover',
                 backgroundColor: '#000000',
                 borderRadius: 100,
               }}
@@ -156,7 +156,6 @@ const HomeScreen = () => {
         </View>
         <View
           style={{
-            justifyContent: 'flex-end',
             height: '7.5%',
             width: '100%',
           }}>

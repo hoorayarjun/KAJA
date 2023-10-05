@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, useWindowDimensions, View} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {Itinerary} from '../../types/itineraries';
+import {Itinerary} from '../../types/types';
 
 interface TextOverviewProps {
   itinerary: Itinerary;

@@ -1,5 +1,5 @@
 import {createContext, ReactNode, useMemo, useState} from 'react';
-import {LocationData} from '../types/itineraries';
+import {LocationData} from '../types/types';
 
 export type LocationDataContextType = {
   locationData: LocationData;

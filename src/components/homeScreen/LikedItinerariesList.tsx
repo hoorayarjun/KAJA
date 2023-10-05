@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import {Icon} from 'react-native-elements';
-import {Itinerary} from '../../types/itineraries';
+import {Itinerary} from '../../types/types';
 import ItinerarySummaryCard from './ItinerarySummaryCard';
 
 interface LikedItinerariesListProps {
