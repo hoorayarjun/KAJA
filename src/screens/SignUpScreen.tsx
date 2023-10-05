@@ -53,7 +53,7 @@ const SignUpScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Full Name'}
@@ -65,7 +65,7 @@ const SignUpScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Email Address'}
@@ -77,7 +77,7 @@ const SignUpScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Your Password'}
@@ -89,7 +89,7 @@ const SignUpScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Re-enter Password'}

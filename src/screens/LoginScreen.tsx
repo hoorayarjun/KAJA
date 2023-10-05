@@ -56,7 +56,7 @@ const LoginScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Email Address'}
@@ -68,7 +68,7 @@ const LoginScreen = () => {
         <View
           style={{
             height: '12.5%',
-            justifyContent: 'center',
+            width: '90%',
           }}>
           <SingleLineInput
             label={'Password'}

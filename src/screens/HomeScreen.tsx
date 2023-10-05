@@ -13,9 +13,12 @@ import LocationIndicator from '../components/common/LocationIndicator';
 import LikedItinerariesList from '../components/homeScreen/LikedItinerariesList';
 import BottomNavBar from '../components/homeScreen/BottomNavBar';
 import DiscoverItinerariesList from '../components/homeScreen/DiscoverItinerariesList';
+import {useContext} from 'react';
+import {UserInfoContext} from '../providers/UserInfoProvider';
 
 const HomeScreen = () => {
   const {fontScale} = useWindowDimensions();
+  const {user} = useContext(UserInfoContext);
 
   const itineraryTypes: ItineraryTag[] = [
     {text: 'All', value: 'grid-view'},
@@ -111,7 +114,7 @@ const HomeScreen = () => {
                 color: '#000000',
                 fontWeight: '700',
               }}>
-              Good Morning, Traveller!
+              Good Morning, {user.firstName}!
             </Text>
             <LocationIndicator />
           </View>
@@ -124,7 +127,11 @@ const HomeScreen = () => {
                 backgroundColor: '#000000',
                 borderRadius: 100,
               }}
-              source={require('../assets/BlankUserImage.png')}
+              source={
+                user.profilePictureUrl
+                  ? {uri: user.profilePictureUrl}
+                  : require('../assets/BlankUserImage.png')
+              }
             />
           </View>
         </View>

@@ -1,12 +1,7 @@
-import {
-  GestureResponderEvent,
-  Text,
-  TouchableOpacity,
-  useWindowDimensions,
-} from 'react-native';
+import {Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 
 interface ActionButtonProps {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: () => void;
   text: string;
   primary: boolean;
 }

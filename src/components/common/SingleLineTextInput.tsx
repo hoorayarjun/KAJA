@@ -1,4 +1,4 @@
-import {View, useWindowDimensions} from 'react-native';
+import {View} from 'react-native';
 import {TextInput} from 'react-native-paper';
 
 interface SingleLineInputProps {
@@ -11,16 +11,16 @@ interface SingleLineInputProps {
 const SingleLineInput = (props: SingleLineInputProps) => {
   const {label, value, hidden, onChangeText} = props;
   const adjustedLabel = '  ' + label;
-  const {fontScale} = useWindowDimensions();
   const color = '#808080';
 
   return (
     <View
       style={{
         borderRadius: 100,
+        alignSelf: 'center',
         justifyContent: 'center',
-        height: 64 / fontScale,
-        width: 346 / fontScale,
+        height: '100%',
+        width: '100%',
       }}>
       <TextInput
         label={adjustedLabel}
