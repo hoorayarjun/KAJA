@@ -1,10 +1,10 @@
 import {Text, View} from 'react-native';
 import {useContext} from 'react';
-import {LocationDataContext} from '../../providers/LocationDataProvider';
+import {UserInfoContext} from '../../providers/UserInfoProvider';
 import {Icon} from 'react-native-elements';
 
 const LocationIndicator = () => {
-  const {locationData} = useContext(LocationDataContext);
+  const {locationData} = useContext(UserInfoContext);
 
   return (
     <View style={{flexDirection: 'row'}}>

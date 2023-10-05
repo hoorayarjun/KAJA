@@ -4,28 +4,28 @@ import DestinationSummaryCard from './DestinationSummaryCard';
 
 const destinations: Destination[] = [
   {
-    id: 1,
+    id: '1',
     name: 'destination 1',
     location: {locationText: 'location 1'},
     reviews: [],
     rating: 1,
   },
   {
-    id: 2,
+    id: '2',
     name: 'destination 2',
     location: {locationText: 'location 2'},
     reviews: [],
     rating: 2,
   },
   {
-    id: 3,
+    id: '3',
     name: 'destination 3',
     location: {locationText: 'location 3'},
     reviews: [],
     rating: 3,
   },
   {
-    id: 4,
+    id: '4',
     name: 'destination 4',
     location: {locationText: 'location 4'},
     reviews: [],

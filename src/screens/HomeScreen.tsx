@@ -13,9 +13,12 @@ import LocationIndicator from '../components/common/LocationIndicator';
 import LikedItinerariesList from '../components/homeScreen/LikedItinerariesList';
 import BottomNavBar from '../components/homeScreen/BottomNavBar';
 import DiscoverItinerariesList from '../components/homeScreen/DiscoverItinerariesList';
+import {useContext} from 'react';
+import {UserInfoContext} from '../providers/UserInfoProvider';
 
 const HomeScreen = () => {
   const {fontScale} = useWindowDimensions();
+  const {user} = useContext(UserInfoContext);
 
   const itineraryTypes: ItineraryTag[] = [
     {text: 'All', value: 'grid-view'},
@@ -29,7 +32,7 @@ const HomeScreen = () => {
 
   const itineraries: Itinerary[] = [
     {
-      id: 1,
+      id: '1',
       name: 'Restaurant',
       photoUrl: '',
       summary:
@@ -40,7 +43,7 @@ const HomeScreen = () => {
       itineraryTypes: ['restaurant'],
     },
     {
-      id: 2,
+      id: '2',
       name: 'Outdoors',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -49,7 +52,7 @@ const HomeScreen = () => {
       itineraryTypes: ['park'],
     },
     {
-      id: 3,
+      id: '3',
       name: 'Museams',
       photoUrl: '',
       summary: 'Some random stuff about museams',
@@ -59,7 +62,7 @@ const HomeScreen = () => {
       itineraryTypes: ['museum'],
     },
     {
-      id: 4,
+      id: '4',
       name: 'Music',
       photoUrl: '',
       summary: 'Some random stuff about music',
@@ -69,7 +72,7 @@ const HomeScreen = () => {
       itineraryTypes: ['audiotrack'],
     },
     {
-      id: 5,
+      id: '5',
       name: 'Arts',
       photoUrl: '',
       summary: 'Some random stuff about restaurants',
@@ -79,7 +82,7 @@ const HomeScreen = () => {
       itineraryTypes: ['theater-comedy'],
     },
     {
-      id: 6,
+      id: '6',
       name: 'Shopping',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -111,7 +114,7 @@ const HomeScreen = () => {
                 color: '#000000',
                 fontWeight: '700',
               }}>
-              Good Morning, Traveller!
+              Good Morning, {user.firstName}!
             </Text>
             <LocationIndicator />
           </View>
@@ -122,9 +125,15 @@ const HomeScreen = () => {
                 width: 67 / fontScale,
                 resizeMode: 'cover',
                 backgroundColor: '#000000',
+                borderColor: '#F47674',
+                borderWidth: 1,
                 borderRadius: 100,
               }}
-              source={require('../assets/BlankUserImage.png')}
+              source={
+                user.profilePictureUrl
+                  ? {uri: user.profilePictureUrl}
+                  : require('../assets/BlankUserImage.png')
+              }
             />
           </View>
         </View>
@@ -156,8 +165,10 @@ const HomeScreen = () => {
         </View>
         <View
           style={{
+            position: 'absolute',
             height: '7.5%',
             width: '100%',
+            bottom: 0,
           }}>
           <BottomNavBar />
         </View>

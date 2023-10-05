@@ -13,7 +13,7 @@ export interface ItineraryTag {
 }
 
 export interface Itinerary {
-  id: number;
+  id: string;
   name: string;
   photoUrl?: string;
   summary?: string;
@@ -24,10 +24,18 @@ export interface Itinerary {
 }
 
 export interface Destination {
-  id: number;
+  id: string;
   name: string;
   photoUrl?: string;
   location: LocationData;
   rating: number;
   reviews: Review[];
+}
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  username: string;
+  profilePictureUrl?: string;
 }

@@ -43,7 +43,6 @@ const OnboardingScreen = () => {
         style={{
           height: '12.5%',
           width: '100%',
-          alignItems: 'center',
         }}>
         <ActionButton
           onPress={() => navigation.navigate('LoginScreen')}
@@ -55,7 +54,6 @@ const OnboardingScreen = () => {
         style={{
           height: '12.5%',
           width: '100%',
-          alignItems: 'center',
         }}>
         <ActionButton
           onPress={() => navigation.navigate('SignUpScreen')}

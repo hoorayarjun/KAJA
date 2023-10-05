@@ -1,12 +1,7 @@
-import {
-  GestureResponderEvent,
-  Text,
-  TouchableOpacity,
-  useWindowDimensions,
-} from 'react-native';
+import {Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 
 interface ActionButtonProps {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: () => void;
   text: string;
   primary: boolean;
 }
@@ -21,6 +16,7 @@ const ActionButton = (props: ActionButtonProps) => {
       style={{
         borderRadius: 100,
         justifyContent: 'center',
+        alignSelf: 'center',
         height: '90%',
         width: '90%',
         backgroundColor: backgroundColor,

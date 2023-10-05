@@ -1,12 +1,17 @@
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useContext} from 'react';
 import {Image, Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {RootStackParamList} from '../../../App';
+import {UserInfoContext} from '../../providers/UserInfoProvider';
+import {getUser} from '../../services/userService';
+import {setUser_storage} from '../../storage/UserStorage';
 
 const GoogleLoginButton = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const {fontScale} = useWindowDimensions();
+  const {refetchUserData} = useContext(UserInfoContext);
   return (
     <TouchableOpacity
       style={{
@@ -20,7 +25,19 @@ const GoogleLoginButton = () => {
         alignItems: 'center',
         flexDirection: 'row',
       }}
-      onPress={() => navigation.navigate('HomeScreen')}>
+      onPress={async () => {
+        try {
+          const user = await getUser('1');
+          await setUser_storage(user);
+          console.log('navigating to the HomeScreen');
+          refetchUserData();
+          navigation.navigate('HomeScreen');
+        } catch (error) {
+          console.log(error);
+          console.log('navigating to the HomeScreen');
+          navigation.navigate('HomeScreen');
+        }
+      }}>
       <Image
         style={{
           height: 24 / fontScale,
