@@ -50,7 +50,8 @@ const BottomNavBar = () => {
           height: '100%',
           justifyContent: 'center',
           alignItems: 'center',
-        }}>
+        }}
+        onPress={() => navigation.navigate('ProfileScreen')}>
         <Icon name="person" color="#F47674" />
       </TouchableOpacity>
     </View>

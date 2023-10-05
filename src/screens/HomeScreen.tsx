@@ -156,8 +156,10 @@ const HomeScreen = () => {
         </View>
         <View
           style={{
+            position: 'absolute',
             height: '7.5%',
             width: '100%',
+            bottom: 0,
           }}>
           <BottomNavBar />
         </View>

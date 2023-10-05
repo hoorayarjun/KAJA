@@ -81,7 +81,6 @@ const LoginScreen = () => {
           style={{
             height: '8%',
             width: '95%',
-            alignItems: 'center',
           }}>
           <ActionButton
             onPress={loginButtonOnPress}

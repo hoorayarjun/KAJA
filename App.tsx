@@ -10,6 +10,7 @@ import LocationProvider from './src/providers/LocationDataProvider';
 import ItineraryScreen, {
   ItineraryScreenProps,
 } from './src/screens/ItineraryScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 
 export type RootStackParamList = {
   OnboardingScreen: undefined;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   HomeScreen: undefined;
   SearchScreen: undefined;
   ItineraryScreen: ItineraryScreenProps;
+  ProfileScreen: undefined;
 };
 
 export default function App() {
@@ -29,14 +31,15 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen
-              name="OnboardingScreen"
+              name='OnboardingScreen'
               component={OnboardingScreen}
             />
-            <Stack.Screen name="LoginScreen" component={LoginScreen} />
-            <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="SearchScreen" component={SearchScreen} />
-            <Stack.Screen name="ItineraryScreen" component={ItineraryScreen} />
+            <Stack.Screen name='LoginScreen' component={LoginScreen} />
+            <Stack.Screen name='SignUpScreen' component={SignUpScreen} />
+            <Stack.Screen name='HomeScreen' component={HomeScreen} />
+            <Stack.Screen name='SearchScreen' component={SearchScreen} />
+            <Stack.Screen name='ItineraryScreen' component={ItineraryScreen} />
+            <Stack.Screen name='ProfileScreen' component={ProfileScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

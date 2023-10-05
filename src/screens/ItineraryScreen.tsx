@@ -82,7 +82,6 @@ const ItineraryScreen = () => {
             width: '100%',
             alignItems: 'center',
             backgroundColor: '#FFFFFF',
-            justifyContent: 'center',
           }}>
           <ActionButton
             onPress={() => console.log('KAJA!')}

@@ -31,3 +31,10 @@ export interface Destination {
   rating: number;
   reviews: Review[];
 }
+
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+}
