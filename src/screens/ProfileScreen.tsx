@@ -34,8 +34,6 @@ const ProfileScreen = () => {
             marginTop: '10%',
             height: '15%',
             width: '30%',
-            borderColor: '#000000',
-            borderWidth: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
@@ -49,83 +47,80 @@ const ProfileScreen = () => {
               height: '100%',
               width: '100%',
               resizeMode: 'cover',
+              borderColor: '#F47674',
+              borderWidth: 1,
               backgroundColor: '#000000',
               borderRadius: 100,
             }}
           />
         </View>
-        <View
-          style={{
-            height: '15%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderColor: '#000000',
-            borderWidth: 1,
-          }}>
-          {editMode ? (
-            <View
-              style={{
-                height: '100%',
-                width: '100%',
-              }}>
-              <View
-                style={{
-                  height: '50%',
-                  width: '100%',
-                  flexDirection: 'row',
-                }}>
-                <View style={{height: '100%', width: '50%'}}>
-                  <SingleLineInput
-                    label="First Name"
-                    value={firstName}
-                    hidden={false}
-                    onChangeText={text => setFirstName(text)}
-                  />
-                </View>
-                <View style={{height: '100%', width: '50%'}}>
-                  <SingleLineInput
-                    label="Last Name"
-                    value={lastName}
-                    hidden={false}
-                    onChangeText={text => setLastName(text)}
-                  />
-                </View>
+        {editMode ? (
+          <View
+            style={{
+              height: '15%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <View style={{flexDirection: 'row', height: '50%', width: '100%'}}>
+              <View style={{height: '100%', width: '50%'}}>
+                <SingleLineInput
+                  label="First Name"
+                  value={firstName}
+                  hidden={false}
+                  onChangeText={text => setFirstName(text)}
+                />
               </View>
               <View
                 style={{
                   height: '100%',
-                  width: '75%',
-                  alignSelf: 'center',
+                  width: '50%',
                 }}>
                 <SingleLineInput
-                  label="Username"
-                  value={username}
+                  label="Last Name"
+                  value={lastName}
                   hidden={false}
-                  onChangeText={text => setUserName(text)}
+                  onChangeText={text => setLastName(text)}
                 />
               </View>
             </View>
-          ) : (
-            <>
-              <Text
-                style={{
-                  fontSize: 20 / fontScale,
-                  color: '#000000',
-                  fontWeight: '700',
-                }}>
-                {user.firstName} {user.lastName}
-              </Text>
-              <Text
-                style={{
-                  fontSize: 18 / fontScale,
-                  color: '#F47674',
-                  fontWeight: '700',
-                }}>
-                @{user.username}
-              </Text>
-            </>
-          )}
-        </View>
+            <View
+              style={{
+                height: '50%',
+                alignSelf: 'center',
+              }}>
+              <SingleLineInput
+                label="Username"
+                value={username}
+                hidden={false}
+                onChangeText={text => setUserName(text)}
+              />
+            </View>
+          </View>
+        ) : (
+          <View
+            style={{
+              height: '15%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text
+              style={{
+                fontSize: 20 / fontScale,
+                color: '#000000',
+                fontWeight: '700',
+              }}>
+              {user.firstName} {user.lastName}
+            </Text>
+            <Text
+              style={{
+                fontSize: 18 / fontScale,
+                color: '#F47674',
+                fontWeight: '700',
+              }}>
+              @{user.username}
+            </Text>
+          </View>
+        )}
         <View
           style={{
             height: '10%',

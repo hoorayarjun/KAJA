@@ -125,6 +125,8 @@ const HomeScreen = () => {
                 width: 67 / fontScale,
                 resizeMode: 'cover',
                 backgroundColor: '#000000',
+                borderColor: '#F47674',
+                borderWidth: 1,
                 borderRadius: 100,
               }}
               source={
