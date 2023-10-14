@@ -12,10 +12,11 @@ import BottomNavBar from '../components/homeScreen/BottomNavBar';
 import {useContext, useState} from 'react';
 import {UserInfoContext} from '../providers/UserInfoProvider';
 import SingleLineInput from '../components/common/SingleLineTextInput';
+import {updateUserInfo} from '../services/userService';
 
 const ProfileScreen = () => {
   const {fontScale} = useWindowDimensions();
-  const {user, setUser} = useContext(UserInfoContext);
+  const {user} = useContext(UserInfoContext);
   const [editMode, setEditMode] = useState(false);
   const [username, setUserName] = useState(user.username);
   const [firstName, setFirstName] = useState(user.firstName);
@@ -129,14 +130,9 @@ const ProfileScreen = () => {
           }}>
           {editMode ? (
             <ActionButton
-              onPress={() => {
+              onPress={async () => {
                 setEditMode(false);
-                setUser({
-                  ...user,
-                  firstName: firstName,
-                  lastName: lastName,
-                  username: username,
-                });
+                await updateUserInfo(user.id, {firstName, lastName, username});
               }}
               text={'Save Profile'}
               primary={true}

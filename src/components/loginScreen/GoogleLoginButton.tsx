@@ -24,7 +24,7 @@ const GoogleLoginButton = () => {
       }}
       onPress={async () => {
         try {
-          const user = await getUser(1);
+          const user = await getUser('1');
           await setUser_storage(user);
           console.log('navigating to the HomeScreen');
           navigation.navigate('HomeScreen');
