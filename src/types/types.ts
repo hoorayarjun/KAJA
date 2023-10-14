@@ -13,7 +13,7 @@ export interface ItineraryTag {
 }
 
 export interface Itinerary {
-  id: number;
+  id: string;
   name: string;
   photoUrl?: string;
   summary?: string;
@@ -24,7 +24,7 @@ export interface Itinerary {
 }
 
 export interface Destination {
-  id: number;
+  id: string;
   name: string;
   photoUrl?: string;
   location: LocationData;
@@ -33,7 +33,7 @@ export interface Destination {
 }
 
 export interface User {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   username: string;

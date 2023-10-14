@@ -2,6 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Image, Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {RootStackParamList} from '../../../App';
+import {getUser} from '../../services/userService';
+import {setUser_storage} from '../../storage/UserStorage';
 
 const GoogleLoginButton = () => {
   const navigation =
@@ -20,7 +22,18 @@ const GoogleLoginButton = () => {
         alignItems: 'center',
         flexDirection: 'row',
       }}
-      onPress={() => navigation.navigate('HomeScreen')}>
+      onPress={async () => {
+        try {
+          const user = await getUser(1);
+          await setUser_storage(user);
+          console.log('navigating to the HomeScreen');
+          navigation.navigate('HomeScreen');
+        } catch (error) {
+          console.log(error);
+          console.log('navigating to the HomeScreen');
+          navigation.navigate('HomeScreen');
+        }
+      }}>
       <Image
         style={{
           height: 24 / fontScale,

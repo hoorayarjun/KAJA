@@ -10,7 +10,7 @@ export type UserInfoContextType = {
 
 export const UserInfoContext = createContext<UserInfoContextType>({
   user: {
-    id: 0,
+    id: '-1',
     firstName: 'firstName',
     lastName: 'lastName',
     username: 'defaultUsername',
@@ -22,7 +22,7 @@ export const UserInfoContext = createContext<UserInfoContextType>({
 
 function UserInfoProvider({children}: {children: ReactNode}) {
   const [user, setUser] = useState<User>({
-    id: 0,
+    id: '-1',
     firstName: 'firstName',
     lastName: 'lastName',
     username: 'defaultUsername',
