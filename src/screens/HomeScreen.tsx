@@ -32,7 +32,7 @@ const HomeScreen = () => {
 
   const itineraries: Itinerary[] = [
     {
-      id: 1,
+      id: '1',
       name: 'Restaurant',
       photoUrl: '',
       summary:
@@ -43,7 +43,7 @@ const HomeScreen = () => {
       itineraryTypes: ['restaurant'],
     },
     {
-      id: 2,
+      id: '2',
       name: 'Outdoors',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},
@@ -52,7 +52,7 @@ const HomeScreen = () => {
       itineraryTypes: ['park'],
     },
     {
-      id: 3,
+      id: '3',
       name: 'Museams',
       photoUrl: '',
       summary: 'Some random stuff about museams',
@@ -62,7 +62,7 @@ const HomeScreen = () => {
       itineraryTypes: ['museum'],
     },
     {
-      id: 4,
+      id: '4',
       name: 'Music',
       photoUrl: '',
       summary: 'Some random stuff about music',
@@ -72,7 +72,7 @@ const HomeScreen = () => {
       itineraryTypes: ['audiotrack'],
     },
     {
-      id: 5,
+      id: '5',
       name: 'Arts',
       photoUrl: '',
       summary: 'Some random stuff about restaurants',
@@ -82,7 +82,7 @@ const HomeScreen = () => {
       itineraryTypes: ['theater-comedy'],
     },
     {
-      id: 6,
+      id: '6',
       name: 'Shopping',
       photoUrl: '',
       location: {locationText: 'Adams Morgan'},

@@ -1,7 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useContext} from 'react';
 import {Image, Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {RootStackParamList} from '../../../App';
+import UserInfoProvider, {
+  UserInfoContext,
+} from '../../providers/UserInfoProvider';
 import {getUser} from '../../services/userService';
 import {setUser_storage} from '../../storage/UserStorage';
 
@@ -9,6 +13,7 @@ const GoogleLoginButton = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const {fontScale} = useWindowDimensions();
+  const {refetchUserData} = useContext(UserInfoContext);
   return (
     <TouchableOpacity
       style={{

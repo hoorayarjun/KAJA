@@ -9,14 +9,14 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {Image, Text} from 'react-native';
 import ActionButton from '../components/common/ActionButton';
 import BottomNavBar from '../components/homeScreen/BottomNavBar';
-import {useContext, useEffect, useState} from 'react';
+import {useContext, useState} from 'react';
 import {UserInfoContext} from '../providers/UserInfoProvider';
 import SingleLineInput from '../components/common/SingleLineTextInput';
 import {updateUserInfo} from '../services/userService';
 
 const ProfileScreen = () => {
   const {fontScale} = useWindowDimensions();
-  const {reloadData, user} = useContext(UserInfoContext);
+  const {refetchUserData, user} = useContext(UserInfoContext);
   const [editMode, setEditMode] = useState(false);
   const [username, setUserName] = useState(user.username);
   const [firstName, setFirstName] = useState(user.firstName);
@@ -133,7 +133,7 @@ const ProfileScreen = () => {
               onPress={async () => {
                 setEditMode(false);
                 await updateUserInfo(user.id, {firstName, lastName, username});
-                reloadData();
+                refetchUserData();
               }}
               text={'Save Profile'}
               primary={true}

@@ -1,10 +1,15 @@
-import {createContext, ReactNode, useEffect, useState} from 'react';
-import { getUser } from '../services/userService';
-import {getUser_storage} from '../storage/UserStorage';
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
+import {getUser} from '../services/userService';
 import {LocationData, User} from '../types/types';
 
 export type UserInfoContextType = {
-  reloadData: () => void;
+  refetchUserData: () => void;
   user: User;
   setUser: React.Dispatch<React.SetStateAction<User>>;
   locationData: LocationData;
@@ -23,7 +28,7 @@ const defaultLocation: LocationData = {
 };
 
 export const UserInfoContext = createContext<UserInfoContextType>({
-  reloadData: () => {},
+  refetchUserData: () => {},
   user: guestUser,
   setUser: () => {},
   locationData: defaultLocation,
@@ -36,23 +41,24 @@ function UserInfoProvider({children}: {children: ReactNode}) {
   const [locationData_state, setLocationData_state] =
     useState<LocationData>(defaultLocation);
 
-  const reloadData = () => {
+  const refetchUserData = () => {
     setReload(!reload);
   };
 
-  const getUser_provider = async () => {
-    const user = await getUser(user_state.id)
+  const getUser_provider = useCallback(async () => {
+    const user = await getUser(user_state.id);
+    console.log('this user is being used : ', user);
     setUser_state(user);
-  };
+  }, [user_state.id]);
 
   useEffect(() => {
-    getUser_provider();
-  }, [reload]);
+    getUser_provider;
+  }, [reload, getUser_provider]);
 
   return (
     <UserInfoContext.Provider
       value={{
-        reloadData,
+        refetchUserData,
         user: user_state,
         setUser: setUser_state,
         locationData: locationData_state,
