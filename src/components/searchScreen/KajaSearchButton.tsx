@@ -17,7 +17,9 @@ const KajaSearchButton = (props: KajaSearchButtonProps) => {
         width: 127 / fontScale,
         backgroundColor: '#F47674',
       }}
-      onPress={() => console.log('filter: ', filter, 'location: ', location)}>
+      onPress={() =>
+        console.log('TODO: filter: ', filter, 'location: ', location)
+      }>
       <Text
         style={{
           color: '#FFFFFF',

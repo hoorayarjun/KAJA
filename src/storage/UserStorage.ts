@@ -3,7 +3,6 @@ import {User} from '../types/types';
 
 export async function setUser_storage(user: User): Promise<void> {
   try {
-    console.log('this setting this user is being called');
     await AsyncStorage.setItem('user', JSON.stringify(user));
   } catch (error) {
     throw new Error('Cannot save user info');

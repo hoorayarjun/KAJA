@@ -84,7 +84,7 @@ const ItineraryScreen = () => {
             backgroundColor: '#FFFFFF',
           }}>
           <ActionButton
-            onPress={() => console.log('KAJA!')}
+            onPress={() => console.log('TODO: KAJA!')}
             text="Kaja!"
             primary={true}
           />

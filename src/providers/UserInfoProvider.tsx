@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import {getUser} from '../services/userService';
+import {getUser_storage} from '../storage/UserStorage';
 import {LocationData, User} from '../types/types';
 
 export type UserInfoContextType = {
@@ -18,7 +19,7 @@ export type UserInfoContextType = {
 
 const guestUser: User = {
   id: '',
-  firstName: '',
+  firstName: 'Guest',
   lastName: '',
   username: '',
 };
@@ -45,15 +46,15 @@ function UserInfoProvider({children}: {children: ReactNode}) {
     setReload(!reload);
   };
 
-  const getUser_provider = useCallback(async () => {
-    const user = await getUser(user_state.id);
-    console.log('this user is being used : ', user);
-    setUser_state(user);
-  }, [user_state.id]);
-
   useEffect(() => {
-    getUser_provider;
-  }, [reload, getUser_provider]);
+    const getUser_provider = async () => {
+      const userId = (await getUser_storage()).id;
+      const user = await getUser(userId);
+      setUser_state(user);
+    };
+
+    getUser_provider();
+  }, [reload]);
 
   return (
     <UserInfoContext.Provider

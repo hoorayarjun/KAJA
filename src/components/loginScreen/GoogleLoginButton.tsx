@@ -3,9 +3,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useContext} from 'react';
 import {Image, Text, TouchableOpacity, useWindowDimensions} from 'react-native';
 import {RootStackParamList} from '../../../App';
-import UserInfoProvider, {
-  UserInfoContext,
-} from '../../providers/UserInfoProvider';
+import {UserInfoContext} from '../../providers/UserInfoProvider';
 import {getUser} from '../../services/userService';
 import {setUser_storage} from '../../storage/UserStorage';
 
@@ -32,6 +30,7 @@ const GoogleLoginButton = () => {
           const user = await getUser('1');
           await setUser_storage(user);
           console.log('navigating to the HomeScreen');
+          refetchUserData();
           navigation.navigate('HomeScreen');
         } catch (error) {
           console.log(error);
